@@ -1,0 +1,601 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+} /* COLOR SYSTEM */
+
+:root {
+  --white: #f8fafc; /* softer background */
+  --dark: #00171f;
+  --deep-blue: #003459;
+  --primary: #007ea7;
+  --accent: #00a8e8;
+  --light-bg: #f1f5f9; /* slightly darker than main bg */
+  --border: #d1d5db; /* stronger borders for contrast */
+  --text-muted: #6b7280;
+} /* BODY */
+
+body {
+  background: var(--white);
+  font-family: Arial, sans-serif;
+  color: var(--dark);
+} 
+/* MAIN */
+.main {
+  width: 100%;
+} 
+/* NAVBAR */
+.nav {
+  width: 100%;
+  height: 75px;
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  background: var(--dark);
+}
+.nav .container {
+  max-width: 1200px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.logo {
+  font-size: 45px;
+  font-family: "Times New Roman";
+}
+.logo-gold {
+  color: var(--accent);
+}
+.logo-white {
+  color: var(--white);
+}
+.menu ul {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+.menu a {
+  text-decoration: none;
+  color: var(--white);
+  font-weight: bold;
+  transition: 0.3s;
+}
+.menu a:hover,
+.menu a.active {
+  color: var(--accent);
+} /* HERO */
+.content {
+  max-width: 1200px;
+  margin: auto;
+  padding: 120px 20px 100px;
+}
+#home {
+  scroll-margin-top: 100px;
+}
+.content h1 {
+  font-family: "Times New Roman";
+  font-size: 60px;
+  letter-spacing: 2px;
+  color: var(--deep-blue);
+}
+.content .par {
+  margin-top: 20px;
+  font-size: 20px;
+  line-height: 30px;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+} /* SECTIONS */
+section {
+  max-width: 1200px;
+  margin: 100px auto;
+  padding: 60px 20px;
+  scroll-margin-top: 100px;
+}
+.midterm {
+  background: var(--light-bg);
+}
+.final {
+  background: var(--light-bg);
+}
+.contact {
+  background: var(--light-bg);
+} /* HEADERS */
+section h2 {
+  font-family: "Times New Roman";
+  font-size: 40px;
+  margin-bottom: 30px;
+  color: var(--deep-blue);
+} 
+
+/* CARDS */
+.card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-left: 5px solid var(--primary);
+  border-radius: 10px;
+  padding: 25px;
+  margin-bottom: 25px;
+  transition: 0.3s;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+.card h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
+  color: var(--deep-blue);
+}
+.card p {
+  font-size: 18px;
+  line-height: 28px;
+  color: var(--text-muted);
+} 
+/* IMAGES */
+.code-img {
+ width: 100%;
+ max-width: 500px;
+ margin: 15px 0;
+ border-radius: 8px;
+ border: 1px solid var(--border);
+}
+
+/* ACTIVITIES */
+.activities-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+  margin-top: 20px;
+}
+.activity-item {
+  background: #ffffff;
+  padding: 15px;
+  border-radius: 10px;
+  border: 1px solid var(--border);
+}
+.activity-item h4 {
+  margin-bottom: 10px;
+  color: var(--deep-blue);
+}
+.activity-item p {
+  font-size: 16px;
+  color: var(--text-muted);
+} /* FINAL */
+
+/* FINAL OUTPUT */
+.final-output {
+  margin: 40px auto;
+  max-width: 1200px;   /* same width as other sections */
+  text-align: left;    /* force left alignment for everything inside */
+}
+
+.final-output h2 {
+  font-family: "Times New Roman";
+  font-size: 40px;     /* same size as other headers */
+  margin-bottom: 30px;
+  color: var(--deep-blue);
+}
+
+.final-card {
+  background: #ffffff;
+  border: 2px dashed var(--primary);
+  border-radius: 10px;
+  padding: 80px;
+  max-width: 700px;
+  margin: 0 auto;      /* center the box itself */
+  text-align: center;
+}
+
+.final-card .notice {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 40px;
+  color: var(--text-muted);
+}
+
+.final-card .stay-tuned {
+  font-size: 18px;
+  color: var(--text-muted);
+}
+
+.contact-info-only {
+  max-width: 900px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px 40px;
+  margin: 0 auto;
+}
+.info-item span {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+.info-item {
+  background: #ffffff;
+  padding: 15px 20px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  transition: 0.3s;
+}
+.info-item p {
+  font-size: 18px;
+  word-break: break-word;
+  color: var(--dark);
+}
+.info-item a {
+  color: var(--dark);
+  text-decoration: none;
+}
+.info-item a:hover {
+  color: var(--accent);
+} 
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 100px;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border);
+} 
+/* HOVER EFFECTS */
+.card:hover,
+.info-item:hover,
+.activity-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+.card-right h4 {
+  font-size: 22px; /* adjust size here */
+  font-weight: 600; /* make them stand out */
+  color: var(--deep-blue);
+  margin-bottom: 10px;
+} 
+/* SLIDESHOW */
+/* Slideshow container */
+.slideshow {
+  position: relative;
+  max-width: 100%;
+  margin: auto;
+}
+
+/* Slides */
+.slide {
+  display: none;
+}
+.slide.active {
+  display: block;
+}
+
+/* Next/Prev buttons */
+.nav-btn {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  padding: 12px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  border: none;
+  background: rgba(0,0,0,0.5);
+  border-radius: 50%;
+  user-select: none;
+}
+.nav-btn:hover {
+  background: rgba(0,0,0,0.8);
+}
+
+/* Position left/right */
+.nav-btn.prev {
+  left: 10px;
+}
+.nav-btn.next {
+  right: 10px;
+}
+
+/* Dots container */
+.dots {
+  text-align: center;
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+}
+
+/* Dots */
+.dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;        /* inactive dots stay gray */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot.active {
+  background-color: var(--accent); /* same blue as navbar hover */
+}
+
+#lightbox img {
+  max-width: 90%;
+  max-height: 80%;
+  border-radius: 6px;
+}
+#lightbox .nav-btn {
+  position: absolute;
+  top: 50%;
+  font-size: 32px;
+  color: white;
+  background: rgba(0,0,0,0.5);
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 50%;
+}
+#lightbox .prev { left: 5%; }
+#lightbox .next { right: 5%; }
+.info-item i {
+  color: #00c3ff; /* change to match your theme */
+  font-size: 16px;
+}
+
+#lightbox .dots {
+  position: absolute;
+  bottom: 20px;   /* stick to bottom */
+  width: 100%;
+  text-align: center;
+}
+
+#lightbox .dot {
+  cursor: pointer;
+  height: 12px;
+  width: 12px;
+  margin: 0 4px;
+  background-color: #bbb;       /* inactive dots stay gray */
+  border-radius: 50%;
+  display: inline-block;
+}
+
+#lightbox .dot.active {
+  background-color: var(--accent); /* use the same blue as navbar hover */
+}
+
+.pdf-btn {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 12px 18px;
+  background: var(--primary);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 500;
+  transition: 0.3s ease;
+}
+.pdf-btn:hover {
+  background: var(--accent);
+  transform: translateY(-2px);
+}
+.card.two-column {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  align-items: flex-start;
+  margin-bottom: 30px;
+}
+.card-left,
+.card-right {
+  flex: 1;
+}
+.card-left img,
+.card-left .slides img {
+  width: 100%;
+  height: auto;
+  object-fit: contain; /* shows full image without cropping */
+  border-radius: 8px;
+} /* Responsive tweak: stack on mobile */
+@media (max-width: 768px) {
+  .card.two-column {
+    flex-direction: column;
+  }
+}
+#lightbox {
+  display: none; /* hidden by default */
+  position: fixed;
+  z-index: 9999; /* sits on top of everything */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); /* dark transparent background */
+  justify-content: center;
+  align-items: center;
+}
+#lightbox img {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 8px;
+  box-shadow: 0 0 20px #000;
+  cursor: pointer; /* clicking closes the lightbox */
+}
+#lightbox .nav-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: var(--primary);
+  border: none;
+  color: white;
+  font-size: 32px;
+  padding: 10px 16px;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: 0.3s;
+  z-index: 10000;
+}
+#lightbox .nav-btn:hover {
+  background: var(--accent);
+}
+#lightbox .prev {
+  left: 20px;
+}
+#lightbox .next {
+  right: 20px;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.tab {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-muted);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.tab.active {
+  color: var(--deep-blue);
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+}
+
+.tab-content {
+  display: none;
+}
+
+.tab-content.active {
+  display: block;
+}
+
+.tabs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 15px;
+}
+
+.tab {
+  cursor: pointer;
+  font-weight: 600;
+  color: var(--text-muted);
+  position: relative;
+  padding-bottom: 4px;
+}
+
+.tab.active {
+  color: var(--deep-blue);
+}
+
+.tab.active::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: var(--accent);
+} 
+/* Tab content */
+.tab-content {
+  display: none; /* hidden by default */
+}
+
+.tab-content.active {
+  display: block; /* only active tab shows */
+}
+
+/* Seatwork & Quiz left column */
+.tab-left {
+  display: none;   /* hide all by default */
+}
+
+.tab-left.active {
+  display: block;  /* only show the active one */
+}
+
+.card-left img,
+.card-left .slides img {
+  max-width: 100%;       /* don’t shrink below container width */
+  max-height: 400px;     /* consistent height across activities */
+  width: auto;           /* keep natural width */
+  height: auto;          /* preserve aspect ratio */
+  object-fit: contain;   /* show full image without cropping */
+  margin: 0 auto;        /* center inside container */
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+
+.no-material-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 250px;
+  border: 2px dashed var(--border);
+  border-radius: 8px;
+  color: var(--text-muted);
+  font-size: 18px;
+  font-weight: 600;
+  background: var(--light-bg);
+  text-align: center;
+}
+
+/* Quiz 2 PDF button centered */
+#quiz2-left {
+  height: 250px;
+}
+
+#quiz2-left.active {
+  display: flex;              /* only when active */
+  justify-content: center;
+  align-items: center;
+}
+
+#quiz2-left .pdf-btn,
+#sw3-left .pdf-btn {
+  display: inline-block;
+  padding: 18px 28px;
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--accent);
+  border: 2px solid var(--accent);
+  border-radius: 8px;
+  text-decoration: none;
+  background: var(--light-bg);
+  transition: background 0.3s, color 0.3s;
+}
+
+#quiz2-left .pdf-btn:hover,
+#sw3-left .pdf-btn:hover {
+  background: var(--accent);
+  color: #fff;
+}
+
+#sw3-left {
+  height: 250px;
+}
+
+#sw3-left.active {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
